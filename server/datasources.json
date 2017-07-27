@@ -1,0 +1,16 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "keep": {
+    "host": "localhost",
+    "port": "27017",
+    "url": "",
+    "database": "keep",
+    "password": "",
+    "name": "keep",
+    "user": "",
+    "connector": "mongodb"
+  }
+}
