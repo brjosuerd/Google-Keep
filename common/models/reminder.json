@@ -1,6 +1,5 @@
 {
   "name": "Reminder",
-  "plural": "Reminders",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {

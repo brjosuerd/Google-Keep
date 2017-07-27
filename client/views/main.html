@@ -1,0 +1,24 @@
+<h1>List</h1>
+<hr>
+<form name="reminderForm" novalidate ng-submit="addReminder()">
+  <div class="form-group"
+      ng-class="{'has-error': reminderForm.title.$invalid
+        && reminderForm.title.$dirty}">
+    <input type="text" class="form-control focus" name="title"
+        placeholder="Title" autocomplete="off" required
+        ng-model="newReminder.title">
+    <span class="has-error control-label" ng-show="
+        reminderForm.title.$invalid && reminderForm.title.$dirty">
+      Content is required.
+    </span>
+  </div>
+  <button class="btn btn-default" ng-disabled="reminderForm.$invalid">Add</button>
+</form>
+<hr>
+<div class="list-group">
+  <a class="list-group-item" ng-repeat="reminder in reminders">{{reminder.title}}&nbsp;
+    <i class="glyphicon glyphicon-remove pull-right"
+        ng-click="removeReminders(reminder)">
+    </i>
+  </a>
+</div>
