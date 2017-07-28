@@ -4,21 +4,34 @@
   <div class="form-group"
       ng-class="{'has-error': reminderForm.title.$invalid
         && reminderForm.title.$dirty}">
+    <label for="Title">Titulo </label>
     <input type="text" class="form-control focus" name="title"
         placeholder="Title" autocomplete="off" required
         ng-model="newReminder.title">
     <span class="has-error control-label" ng-show="
         reminderForm.title.$invalid && reminderForm.title.$dirty">
-      Content is required.
+      Titulo es requerido.
     </span>
+  </div>
+  <div class="form-group">
+    <label for="Description">Descripcion</label>
+    <input type="text" class="form-control" name="description"
+      plaeholder="Desccription" autocomplete="off" ng-model="newReminder.description">
   </div>
   <button class="btn btn-default" ng-disabled="reminderForm.$invalid">Add</button>
 </form>
 <hr>
-<div class="list-group">
-  <a class="list-group-item" ng-repeat="reminder in reminders">{{reminder.title}}&nbsp;
-    <i class="glyphicon glyphicon-remove pull-right"
-        ng-click="removeReminders(reminder)">
-    </i>
-  </a>
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="item" ng-repeat="reminder in reminders"
+      ng-click="updateReminder(reminder)">
+      <i class="glyphicon glyphicon-remove pull-right"
+          ng-click="removeReminders(reminder)">
+      </i>
+      <h3>{{reminder.title}}</h3>
+      <p><strong>{{reminder.description}}</strong></p>
+      <hr>
+    </div>
+  </div>
 </div>

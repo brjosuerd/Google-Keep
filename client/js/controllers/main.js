@@ -19,6 +19,7 @@ angular.module('app')
       .then(function(reminder) {
         $scope.newReminder = '';
         $scope.reminderForm.title.$setPristine();
+        $scope.reminderForm.description.$setPristine();
         $('.focus').focus();
         getReminders();
       });
@@ -32,4 +33,13 @@ angular.module('app')
         getReminders();
       });
   };
+
+  $scope.updateReminder = function(item){
+    Reminder
+      .upsert(item)
+      .$promise
+      .then(function(){
+        getReminders();
+      });
+  }
 }]);
