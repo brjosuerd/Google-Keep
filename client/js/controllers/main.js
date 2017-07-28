@@ -1,4 +1,4 @@
-angual.module('app')
+angular.module('app')
 .controller('ReminderController', ['$scope', '$state', 'Reminder', function($scope,
     $state, Reminder) {
   $scope.reminders = [];
